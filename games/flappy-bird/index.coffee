@@ -45,9 +45,6 @@ githubHtml = """<iframe src="http://ghbtns.com/github-btn.html?user=hyspace&repo
 
 floor = Math.floor
 
-up = null
-spacebar = null
-
 main = ->
   spawntube = (openPos, flipped) ->
     tube = null
@@ -136,6 +133,12 @@ main = ->
     # Stop spawning tubes
     game.time.events.remove(tubesTimer)
 
+    # Make bird reset the game
+    game.time.events.add 1000, ->
+      game.input.onTap.addOnce ->
+        reset()
+        swooshSnd.play()
+
     hurtSnd.play()
     return
 
@@ -149,9 +152,6 @@ main = ->
       tween.onComplete.add ->
         bird.body.gravity.y = GRAVITY
       flapSnd.play()
-    if gameOver
-      reset()
-      swooshSnd.play()
     return
 
   preload = ->
@@ -283,12 +283,6 @@ main = ->
     swooshSnd = game.add.audio("swoosh")
 
     # Add controls
-    up = game.input.keyboard.addKey(Phaser.Keyboard.UP)
-    spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
-
-    # Add listeners
-    up.onDown.add flap
-    spacebar.onDown.add flap
     game.input.onDown.add flap
 
     # RESET!
