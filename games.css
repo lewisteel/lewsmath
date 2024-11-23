@@ -106,3 +106,9 @@ body, html {
 #nav-top {
     top: 8% !important;
 }
+
+.game-img:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
