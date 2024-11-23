@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="games.css">
+        <title>Home</title>
+        <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    </head>
+    <body>
+        <div id="particles-js"></div>
+    </body>
+    <div class="count-particles">
+        <span class="js-count-particles"></span>
+      </div>
+      <div id="fpsCounter">FPS: 0</div>
+    <script>let lastFrameTime = performance.now();
+      let frameCount = 0;
+      let fps = 0;
+      
+      function updateFPS() {
+          const now = performance.now();
+          frameCount++;
+          const deltaTime = now - lastFrameTime;
+      
+          if (deltaTime >= 1000) {
+              fps = (frameCount / (deltaTime / 1000)).toFixed(0);
+              frameCount = 0;
+              lastFrameTime = now;
+              document.getElementById('fpsCounter').textContent = `FPS: ${fps}`;
+          }
+      
+          requestAnimationFrame(updateFPS);
+      }
+      
+      updateFPS();</script>  
+      <div class="navbar">
+        <div class="row">
+          <div class="icon"></div>
+          <div class="nav-text"></div>
+        </div>
+      </div>
+      <div id="minecraftlauncher" class="centerdiv">
+        <h1>Minecraft Launcher</h1>
+        <br>
+        <select type="dropdown" id="version-chooser">
+            <option value="./games/eaglercraft/index.html">Use Default Version</option>
+            <option value="./games/eaglercraftx/index.html">1.8.8 (Multiplayer Only)</option>
+        </select>
+        <button id="submit" onclick="mclaunch()">Launch</button>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 70,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 2.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 20,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#34e8eb",
+      "opacity": 0.4,
+      "width": 2
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+<script src="index.js"></script>
+</html>

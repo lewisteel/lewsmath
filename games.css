@@ -1,0 +1,108 @@
+body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+}
+
+#game-content {
+    width: 80% !important;
+    height: 90% !important;
+    overflow: scroll !important;
+    text-align: center;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #d435bf;
+    z-index: -100;
+}   
+
+#fpsCounter {
+    position: fixed; 
+    top: 2.5%; 
+    right: 1%; 
+    z-index: 10000; 
+    background: rgba(0, 0, 0, 0.5); 
+    opacity: 0.5; padding: 10px; 
+    color: rgba(255, 255, 255, 0.75); 
+    font-size: 24px; 
+    pointer-events: none;
+}
+
+.centerdiv {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: rgba(10, 10, 10, 0.7);
+    top: 15%;
+    left: 50%;
+    overflow: clip;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 650px;
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    color: white;
+    padding: 30px;
+    line-height: 1.8;
+    overflow-y: auto;
+}
+
+.game-img {
+    border-radius: 25px;
+    display: inline-block;
+    margin: 5px;
+    width: 240px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.navbar {
+    display: block;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    height: 85%;
+    width: 2%;
+    top: 7%;
+    left: 0%;
+    z-index: 9999;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-family: 'notitle';
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+#searchInput {
+    padding: 10px;
+    border-radius: 5px;
+    width: 20%;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+}
+
+#minecraftlauncher {
+    text-align: center;
+    display: inline-block;
+}
+
+#submit {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+.navbar:hover {width: 6%;}
+
+#nav-top {
+    top: 8% !important;
+}
