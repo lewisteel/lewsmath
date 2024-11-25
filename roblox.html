@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
         <title>Home</title>
         <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
     </head>
@@ -33,21 +34,32 @@
       
       updateFPS();</script>  
       <div class="navbar">
-        <div class="row">
-          <div class="icon"></div>
-          <div class="nav-text"></div>
+        <div id="nav-left">
+          <h3>Lews Fun Games👍😎</h3>
+        </div>
+        <div id="nav-right">
+
         </div>
       </div>
-      <div id="minecraftlauncher" class="centerdiv">
-        <h1>Minecraft Launcher</h1>
-        <br>
-        <select type="dropdown" id="version-chooser">
-            <option value="./games/eaglercraft/index.html">Use Default Version</option>
-            <option value="./games/eaglercraftx/index.html">1.8.8 (Multiplayer Only)</option>
-        </select>
-        <button id="submit" onclick="mclaunch()">Launch</button>
+      <div class="gamediv">
+        <iframe class="game-iframe" src="https://skibiditoilet.yourmom.eu.org/"></iframe>
       </div>
+      <div class="bottom-bar">
+        <button onclick="toggleFullscreen()" id="fullscreenBtn"><img src="https://mexismath.web.app/expand-solid.png"></button>
+    </div>
 </body>
+<script>
+  function toggleFullscreen() {
+            const iframe = document.querySelector('iframe');
+            if (!document.fullscreenElement) {
+                iframe.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+</script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
   particlesJS("particles-js", {
@@ -161,5 +173,4 @@
   "retina_detect": true
 });
 </script>
-<script src="index.js"></script>
 </html>
