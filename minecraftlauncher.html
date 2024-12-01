@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Home</title>
         <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <div id="particles-js"></div>
@@ -33,18 +34,35 @@
       
       updateFPS();</script>  
       <div class="navbar">
-        <div class="nav-row">
-          <div class="icon"></div>
-          <div class="nav-text"></div>
+        <div class="nav-top">
+          <a class="fas" href="./main.html"><img src="./images/lews-games.png" alt="website logo"></a>
         </div>
+        <div class="nav-center">
+          <div class="nav-row" onclick="location.href = './games.html'">
+            <div class="icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="nav-text" >
+              Games
+            </div>
+          </div>
+          <div class="nav-row" onclick="location.href = './settings.html'">
+            <div class="icon">
+              <i class="fas fa-gear"></i>
+            </div>
+            <div class="nav-text">
+              Settings
+            </div>
+          </div>
+       </div>
       </div>
       <div id="minecraftlauncher" class="centerdiv">
         <iframe id="eaglercraft" src="./games/eaglercraft/index.html"></iframe>
         <h1>Minecraft Launcher</h1>
         <br>
         <select type="dropdown" id="version-chooser">
-            <option value="./games/eaglercraft/index.html">Use Default Version</option>
-            <option value="./games/eaglercraftx/index.html">1.8.8 (Multiplayer Only)</option>
+            <option value="./game.html?url=./games/eaglercraft/index.html">Use Default Version</option>
+            <option value="./game.html?url=./games/eaglercraftx/index.html">1.8.8 (Multiplayer Only)</option>
         </select>
         <button id="submit" onclick="mclaunch()">Launch</button>
       </div>

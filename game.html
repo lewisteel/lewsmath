@@ -5,7 +5,7 @@
         <script src="index.js"></script>
         <title>Home</title>
         <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
-        <script src="https://kit.fontawesome.com/c26e43620e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <div id="particles-js"></div>
@@ -35,8 +35,11 @@
       
       updateFPS();</script>  
       <div class="navbar">
-        <div class="nav-bottom">
-          <div class="nav-row">
+        <div class="nav-top">
+          <a class="fas" href="./main.html"><img src="./images/lews-games.png" alt="website logo"></a>
+        </div>
+        <div class="nav-center">
+          <div class="nav-row" onclick="location.href = './games.html'">
             <div class="icon">
               <i class="fas fa-gamepad"></i>
             </div>
@@ -44,8 +47,7 @@
               Games
             </div>
           </div>
-          
-          <div class="nav-row">
+          <div class="nav-row" onclick="location.href = './settings.html'">
             <div class="icon">
               <i class="fas fa-gear"></i>
             </div>
@@ -56,15 +58,25 @@
        </div>
       </div>
       <div class="gamediv">
-        <iframe class="game-iframe" src="https://skibiditoilet.yourmom.eu.org/"></iframe>
+        <iframe class="game-iframe" src=""></iframe>
       </div>
       <div class="bottom-bar">
-        <button onclick="toggleFullscreen()" id="fullscreenBtn"><img src="https://mexismath.web.app/expand-solid.png"></button>
+        <button onclick="toggleFullscreen()" id="fullscreenBtn"><i class="fa-solid fa-expand"></i></button>
+        <button id="refreshBtn"><i class="fa-solid fa-rotate-right"></i></button>
     </div>
 </body>
 <script>
-  function toggleFullscreen() {
-            const iframe = document.querySelector('iframe');
+    const game = document.querySelector(".game-iframe");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const embeddedUrl = urlParams.get('url');
+
+if (embeddedUrl) {
+    game.src = embeddedUrl;
+}
+
+function toggleFullscreen() {
+    const iframe = document.querySelector('iframe');
             if (!document.fullscreenElement) {
                 iframe.requestFullscreen().catch(err => {
                     alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
@@ -73,6 +85,11 @@
                 document.exitFullscreen();
             }
         }
+
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+          document.querySelector('.game-iframe').src = document.querySelector('.game-iframe').src
+
+        });
 </script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
