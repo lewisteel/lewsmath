@@ -1,0 +1,3 @@
+[submodule "games/sketchbook"]
+	path = games/sketchbook
+	url = https://github.com/swift502/Sketchbook.git
