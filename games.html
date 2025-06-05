@@ -4,6 +4,15 @@
         <link rel="stylesheet" href="./style.css">
         <title>Home</title>
         <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+        <script>document.addEventListener("DOMContentLoaded", () => {
+          var icon = localStorage.getItem('icon');
+          var title = localStorage.getItem('title');
+          document.querySelector('link[rel="icon"]').href = icon;
+          document.title = title;
+          var storedColor = localStorage.getItem('backgroundColor')
+          document.body.style.backgroundColor = storedColor;
+          document.getElementById('colorPicker').value = storedColor;
+      })</script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
@@ -68,7 +77,7 @@
             <a href="./game.html?url=./games/core-ball/index.html"><img class="game-img" src="./images/core-ball.png" alt="coreball core ball"></a>
             <a href="./game.html?url=./games/cookie-clicker/index.html"><img class="game-img" src="./images/cookie-clicker.png" alt="cookie clicker cookieclicker"></a>
             <a href="./minecraftlauncher.html"><img class="game-img" src="./images/minecraft.png" alt="minecraft eaglercraft"></a>
-            <a href="./game.html?url=https://skibiditoilet.yourmom.eu.org/"><img class="game-img" src="./images/roblox.png" alt="roblox"></a>
+            <a href="./game.html?url=https://studyimages.com/"><img class="game-img" src="./images/roblox.png" alt="roblox"></a>
             <a href="./game.html?url=./games/fnaf/index.html"><img class="game-img" src="./images/fnaf.png" alt="fnaf five nights at freddy's freddys"></a>
             <a href="./game.html?url=./games/sketchbook/index.html"><img class="game-img" src="./images/sketchbook.png" alt="sketchbook 0.4 4"></a>
             <a href="./game.html?url=./games/"><img class="game-img" src="./images/.png" alt=""></a>

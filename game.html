@@ -5,6 +5,15 @@
         <script src="index.js"></script>
         <title>Home</title>
         <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+        <script>document.addEventListener("DOMContentLoaded", () => {
+          var icon = localStorage.getItem('icon');
+          var title = localStorage.getItem('title');
+          document.querySelector('link[rel="icon"]').href = icon;
+          document.title = title;
+          var storedColor = localStorage.getItem('backgroundColor')
+          document.body.style.backgroundColor = storedColor;
+          document.getElementById('colorPicker').value = storedColor;
+      })  </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
